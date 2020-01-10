@@ -42,8 +42,6 @@
 /system/etc/permissions/embms.xml
 /system/etc/permissions/qcrilhook.xml
 /system/etc/permissions/rcsservice.xml
-/system/framework/embmslibrary.jar
-/system/framework/qcrilhook.jar
 /system/lib64/libiperf.so
 /system/lib64/libtinyxml.so
 /system/lib/libiperf.so

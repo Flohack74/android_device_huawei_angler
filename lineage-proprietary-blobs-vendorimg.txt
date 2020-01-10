@@ -19,5 +19,3 @@
 #
 # <src relative to root of extracted filesystem>:<dst relative to system>
 
--app/ims/ims.apk
--app/TimeService/TimeService.apk
