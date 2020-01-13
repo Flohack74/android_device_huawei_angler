@@ -160,11 +160,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/ofono.override:system/halium/etc/init/ofono.override \
     $(LOCAL_PATH)/ubuntu/70-angler.rules:system/halium/lib/udev/rules.d/70-android.rules \
-    $(LOCAL_PATH)/ubuntu/display.conf:system/halium/etc/ubuntu-touch-session.d/android.conf
+    $(LOCAL_PATH)/ubuntu/display.conf:system/halium/etc/ubuntu-touch-session.d/android.conf \
+    $(LOCAL_PATH)/ubuntu/config-default.xml:system/halium/usr/share/powerd/device_configs/config-default.xml
 #    $(LOCAL_PATH)/ubuntu/timekeeper.conf:system/halium/etc/init/timekeeper.conf \
 #    $(LOCAL_PATH)/ubuntu/init_wlan_bt.sh:system/etc/init_wlan_bt.sh \
-#    $(LOCAL_PATH)/ubuntu/config-default.xml:system/halium/usr/share/repowerd/device-configs/config-hammerhead.xml \
-#    $(LOCAL_PATH)/ubuntu/config-default.xml:system/halium/usr/share/repowerd/device-configs/config-default.xml \
 #    $(LOCAL_PATH)/ubuntu/bluetooth/hciattach:system/halium/usr/bin/hciattach \
 #    $(LOCAL_PATH)/ubuntu/bluetooth/bluetooth-touch-hammerhead.conf:system/halium/etc/init/bluetooth-touch-hammerhead.conf \
 #    $(LOCAL_PATH)/ubuntu/bluetooth/hammerhead:system/halium/usr/share/bluetooth-touch/hammerhead
