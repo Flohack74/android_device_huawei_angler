@@ -435,6 +435,7 @@ service imscmservice /system/bin/imscmservice
     user system
     group radio net_raw diag diag log
     writepid /dev/cpuset/system-background/tasks
+    disabled
 
 service cnd /vendor/bin/cnd
     class late_start
@@ -442,6 +443,11 @@ service cnd /vendor/bin/cnd
     group root wakelock
     writepid /dev/cpuset/system-background/tasks
 
+service minimedia /system/bin/minimediaservice
+    class main
+    user media
+    group audio camera
+    ioprio rt 4
 on property:ro.boot.hardware.revision=ANGLER-V1
     write /sys/module/bcmdhd/parameters/nvram_path \
 	      /system/etc/wifi/bcmdhd-pme.cal

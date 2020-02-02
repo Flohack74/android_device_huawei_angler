@@ -171,6 +171,12 @@ PRODUCT_COPY_FILES += \
 #    $(LOCAL_PATH)/ubuntu/touch.pa:system/halium/etc/pulse/touch.pa \
 #    $(LOCAL_PATH)/audio/mixer_paths.xml:system/halium/etc/mixer_paths.xml \
 
+# HW decoding
+PRODUCT_PACKAGES += \
+    libmedia_compat \
+    minimediaservice
+
+
 #Ubuntu Touch: USB port handling
 #PRODUCT_COPY_FILES += \
 #    $(LOCAL_PATH)/ubuntu/usb/setupusb:system/halium/usr/share/usbinit/setupusb \
