@@ -162,9 +162,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/70-angler.rules:system/halium/lib/udev/rules.d/70-android.rules \
     $(LOCAL_PATH)/ubuntu/display.conf:system/halium/etc/ubuntu-touch-session.d/android.conf \
     $(LOCAL_PATH)/ubuntu/config-default.xml:system/halium/usr/share/powerd/device_configs/config-default.xml \
-    $(LOCAL_PATH)/ubuntu/bluetooth/hciattach:system/halium/usr/bin/hciattach \
-    $(LOCAL_PATH)/ubuntu/bluetooth/bluetooth-touch-android.conf:system/halium/etc/init/bluetooth-touch-android.conf \
-    $(LOCAL_PATH)/ubuntu/bluetooth/angler:system/halium/usr/share/bluetooth-touch/hammerhead
+    $(LOCAL_PATH)/ubuntu/bluetooth/hciattach:system/bin/hciattach \
+    $(LOCAL_PATH)/ubuntu/bluetooth/bluetooth-touch-android.conf:system/halium/etc/init/bluetooth-touch-android.conf
 #    $(LOCAL_PATH)/ubuntu/timekeeper.conf:system/halium/etc/init/timekeeper.conf \
 #    $(LOCAL_PATH)/ubuntu/init_wlan_bt.sh:system/etc/init_wlan_bt.sh \
 #    $(LOCAL_PATH)/ubuntu/unblock_wakelock.sh:system/etc/unblock_wakelock.sh \
@@ -176,6 +175,10 @@ PRODUCT_PACKAGES += \
     libmedia_compat \
     minimediaservice
 
+# telepathy-ofono quirks, ril selection
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.t-o.quirk.forcesink=sink.primary_output \
+    ro.t-o.quirk.forcesource=source.fast_input
 
 #Ubuntu Touch: USB port handling
 #PRODUCT_COPY_FILES += \
