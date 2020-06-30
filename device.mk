@@ -164,22 +164,20 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/config-default.xml:system/halium/usr/share/powerd/device_configs/config-default.xml \
     $(LOCAL_PATH)/ubuntu/bluetooth/hciattach:system/bin/hciattach \
     $(LOCAL_PATH)/ubuntu/bluetooth/bluetooth-touch-android.conf:system/halium/etc/init/bluetooth-touch-android.conf \
-    $(LOCAL_PATH)/ubuntu/rsyslog.conf:system/halium/etc/rsyslog.conf
-#    $(LOCAL_PATH)/ubuntu/timekeeper.conf:system/halium/etc/init/timekeeper.conf \
-#    $(LOCAL_PATH)/ubuntu/init_wlan_bt.sh:system/etc/init_wlan_bt.sh \
-#    $(LOCAL_PATH)/ubuntu/unblock_wakelock.sh:system/etc/unblock_wakelock.sh \
-#    $(LOCAL_PATH)/ubuntu/touch.pa:system/halium/etc/pulse/touch.pa \
-#    $(LOCAL_PATH)/audio/mixer_paths.xml:system/halium/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/ubuntu/rsyslog.conf:system/halium/etc/rsyslog.conf \
+    $(LOCAL_PATH)/ubuntu/device-hacks.conf:system/halium/etc/init/device-hacks.conf \
+    $(LOCAL_PATH)/ubuntu/apparmor.d/abstractions/base:system/halium/etc/apparmor.d/abstractions/base \
+    $(LOCAL_PATH)/ubuntu/apparmor.d/local/usr.bin.media-hub-server:system/halium/etc/apparmor.d/local/usr.bin.media-hub-server
 
-# HW decoding
+# Ubuntu Touch additional packages
 PRODUCT_PACKAGES += \
     libmedia_compat \
-    minimediaservice
+    minimediaservice \
+    libaudioflingerglue \
+    libminisf \
+    miniafservice
 
-# telepathy-ofono quirks, ril selection
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.t-o.quirk.forcesink=sink.primary_output \
-    ro.t-o.quirk.forcesource=source.fast_input
+MINIMEDIA_SENSORSERVER_DISABLE := 1
 
 #Ubuntu Touch: USB port handling
 #PRODUCT_COPY_FILES += \
