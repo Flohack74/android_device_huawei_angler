@@ -166,11 +166,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/rsyslog.conf:system/halium/etc/rsyslog.conf \
     $(LOCAL_PATH)/ubuntu/device-hacks.conf:system/halium/etc/init/device-hacks.conf \
     $(LOCAL_PATH)/ubuntu/apparmor.d/abstractions/base:system/halium/etc/apparmor.d/abstractions/base \
-    $(LOCAL_PATH)/ubuntu/apparmor.d/local/usr.bin.media-hub-server:system/halium/etc/apparmor.d/local/usr.bin.media-hub-server
+
+# Unlock recovery
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.adb.secure=0
 
 # Ubuntu Touch additional packages
 PRODUCT_PACKAGES += \
-    libmedia_compat \
+    libmedia_compat_layer \
     minimediaservice \
     libaudioflingerglue \
     libminisf \
