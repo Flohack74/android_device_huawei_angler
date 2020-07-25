@@ -449,6 +449,12 @@ service minimedia /system/bin/minimediaservice
     group audio camera
     ioprio rt 4
 
+service miniafservice /system/bin/miniafservice
+    class core
+    user root
+    group audio
+    disabled
+
 on property:ro.boot.hardware.revision=ANGLER-V1
     write /sys/module/bcmdhd/parameters/nvram_path \
 	      /system/etc/wifi/bcmdhd-pme.cal

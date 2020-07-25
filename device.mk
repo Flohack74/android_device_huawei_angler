@@ -179,6 +179,11 @@ PRODUCT_PACKAGES += \
 
 MINIMEDIA_SENSORSERVER_DISABLE := 1
 
+# telepathy-ofono quirks
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.t-o.quirk.forcesink=sink.primary_output  \
+    ro.t-o.quirk.forcesource=source.fast_input
+
 #Ubuntu Touch: USB port handling
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/usb/setupusb:system/halium/usr/share/usbinit/setupusb \
