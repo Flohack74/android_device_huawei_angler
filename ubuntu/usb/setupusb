@@ -30,7 +30,7 @@ setup_adb() {
     setprop sys.usb.config adb
 }
 
-setup_mtp_rndis() {
+setup_mtp_adb() {
     write $ANDROID_USB/enable        0
     write $ANDROID_USB/functions     ""
     write $ANDROID_USB/enable        1
@@ -41,7 +41,7 @@ setup_mtp_rndis() {
     write $ANDROID_USB/iManufacturer "Mer Boat Loader"
     write $ANDROID_USB/iProduct      "$PRODUCT"
     write $ANDROID_USB/iSerial       "$SERIALNUMBER"
-    write $ANDROID_USB/functions     rndis,mtp:rndis,mtp,acm,diag
+    write $ANDROID_USB/functions     mtp,adb:mtp,acm,diag,adb
     write $ANDROID_USB/enable        1
     # setprop sys.usb.state mtp,adb
 }
@@ -83,8 +83,10 @@ if [ "$1" == "rndis" ]; then
     setup_rndis
 elif [ "$1" == "mtp" ]; then
     setup_mtp
-elif [ "$1" == "mtp_rndis" ]; then
-    setup_mtp_rndis
+elif [ "$1" == "adb" ]; then
+    setup_adb
+elif [ "$1" == "mtp_adb" ]; then
+    setup_mtp_adb
 elif [ "$1" == "reset" ]; then
     reset_usb
 else

@@ -166,10 +166,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/rsyslog.conf:system/halium/etc/rsyslog.conf \
     $(LOCAL_PATH)/ubuntu/device-hacks.conf:system/halium/etc/init/device-hacks.conf \
     $(LOCAL_PATH)/ubuntu/apparmor.d/abstractions/base:system/halium/etc/apparmor.d/abstractions/base \
-
-# Unlock recovery
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.adb.secure=0
+    $(LOCAL_PATH)/ubuntu/timekeeper.conf:system/halium/etc/init/timekeeper.conf
 
 # Ubuntu Touch additional packages
 PRODUCT_PACKAGES += \
