@@ -12,7 +12,7 @@ $(call inherit-product, device/huawei/angler/aosp_angler.mk)
 PRODUCT_NAME := lineage_angler
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Nexus 6P
-
+PRODUCT_MANUFACTURER := Huawei
 TARGET_VENDOR := huawei
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
