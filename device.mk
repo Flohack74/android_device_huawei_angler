@@ -185,7 +185,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 #Ubuntu Touch: USB port handling
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ubuntu/usb/setupusb:system/halium/usr/share/usbinit/setupusb \
+    $(LOCAL_PATH)/ubuntu/usb/setupusb:system/bin/setupusb \
     $(LOCAL_PATH)/ubuntu/usb/mtp-state.conf:system/halium/etc/init/mtp-state.conf
 
 PRODUCT_TAGS += dalvik.gc.type-precise
