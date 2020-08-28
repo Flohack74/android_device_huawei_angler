@@ -47,6 +47,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
 BOARD_RAMDISK_OFFSET     := 0x02000000
 
 BOARD_KERNEL_CMDLINE := androidboot.hardware=angler console=tty0 androidboot.console=ttyHSL0 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 no_console_suspend
+BOARD_KERNEL_CMDLINE += systempart=/dev/mmcblk0p43
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
 BOARD_USES_ALSA_AUDIO := true
@@ -62,8 +63,6 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/huawei/angler/bluetooth
 
 BOARD_USES_SECURE_SERVICES := true
-
-BOARD_NEEDS_VENDORIMAGE_SYMLINK := true
 
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
