@@ -187,7 +187,7 @@ on post-fs-data
     mkdir /data/misc/display 0770 system graphics
 
     # Create /data/time folder for time-services
-    mkdir /data/time/ 0700 system system
+    mkdir /data/time/ 0777 system system
     mkdir /data/audio/ 0770 media audio
 
     # Create folder for perf daemon
@@ -364,6 +364,7 @@ service time_daemon /vendor/bin/time_daemon
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
+    disabled
 
 service loc_launcher /vendor/bin/loc_launcher
     class late_start
