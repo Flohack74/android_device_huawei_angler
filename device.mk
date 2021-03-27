@@ -187,10 +187,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ubuntu/usb/setupusb:system/bin/setupusb \
     $(LOCAL_PATH)/ubuntu/usb/mtp-state.conf:system/halium/etc/init/mtp-state.conf
 
-# Ubuntu Touch: Use AAL camera
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.ubuntu.camera_plugin=aal
-
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # This device is 560dpi.  However the platform doesn't
